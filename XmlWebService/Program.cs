@@ -34,11 +34,11 @@ app.MapPost("/xml", async (HttpRequest request) =>
     using var reader = new StreamReader(request.Body);
     var xmlContent = await reader.ReadToEndAsync();
 
-    Console.WriteLine(xmlContent);
+    Console.WriteLine($"Received {xmlContent.Length} characters.");
 
     // Here you can do anything with the XML, e.g., parse or transform, etc.
     // For simplicity, we just echo it back in this example.
-    return Results.Content(xmlContent, "application/xml");
+    return Results.Content($"Received {xmlContent.Length} characters.", "application/text");
 })
 // Inform swagger about supported content types and response types
 .Accepts<string>("application/xml")
