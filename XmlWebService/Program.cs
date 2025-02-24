@@ -20,6 +20,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Health endpoint (GET /health)
+app.MapGet("/health", () =>
+{
+    // Return HTTP 200 with a simple message
+    return Results.Ok("Service is healthy and running.");
+})
+.Produces<string>(StatusCodes.Status200OK);
+
 app.MapPost("/xml", async (HttpRequest request) =>
 {
     // Read raw XML from the body
