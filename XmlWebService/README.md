@@ -10,3 +10,10 @@ curl --location 'http://localhost:5134/xml' \
 --data '<xml>123</xml>'
 ```
 
+
+
+Swagger
+
+* http://localhost:5134/swagger/index.html
+
+  
